@@ -3,290 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Yadav | IT Engineering Student</title>
+
+    <title>Shubham Yadav | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #f4f6f8;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: #ffffff;
             line-height: 1.6;
         }
 
-        .container {
-            width: 85%;
-            max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border-radius: 12px;
-        }
-
-        header {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #222;
-        }
-
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            font-size: 18px;
-            color: #555;
-        }
-
-        .contact {
-            margin-top: 12px;
-            font-size: 14px;
-        }
-
-        .contact a {
-            color: #222;
-            text-decoration: none;
-            margin: 0 8px;
-        }
-
-        section {
-            margin-top: 30px;
-        }
-
-        section h2 {
-            font-size: 23px;
-            border-bottom: 2px solid #222;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-
-        .about {
-            font-size: 16px;
-        }
-
-        .skills {
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #202637;
         }
 
-        .skill {
-            background: #222;
-            color: white;
-            padding: 7px 14px;
-            border-radius: 20px;
-            font-size: 14px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .project {
+        .logo span {
+            color: #00d9ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 100px 8%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            max-width: 800px;
+        }
+
+        .hero small {
+            color: #00d9ff;
+            font-size: 18px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #aaa;
             margin-bottom: 20px;
         }
 
-        .project h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .project p {
-            color: #555;
-        }
-
-        .education-item {
-            margin-bottom: 15px;
-        }
-
-        .education-item h3 {
+        .hero p {
+            color: #aaa;
+            max-width: 650px;
             font-size: 18px;
         }
 
-        .education-item p {
-            color: #555;
+        .buttons {
+            margin-top: 30px;
         }
 
-        ul {
-            padding-left: 20px;
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-right: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        li {
-            margin-bottom: 6px;
+        .primary {
+            background: #00d9ff;
+            color: #000;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            color: #777;
+        .primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .secondary:hover {
+            background: #00d9ff;
+            color: #000;
+        }
+
+        /* ABOUT */
+        #about {
+            background: #0f1420;
+        }
+
+        .about-text {
+            color: #aaa;
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 18px;
+            border: 1px solid #293246;
+            border-radius: 25px;
+            background: #111827;
+            color: #ddd;
+        }
+
+        .skill:hover {
+            border-color: #00d9ff;
+            color: #00d9ff;
+        }
+
+        /* PROJECTS */
+        #projects {
+            background: #0f1420;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #202a3c;
+            padding: 25px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: #999;
+        }
+
+        .tech {
+            margin-top: 15px;
+            color: #00d9ff;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-                padding: 25px;
+        /* DSA */
+        .stats {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: #111827;
+            padding: 25px 40px;
+            border-radius: 10px;
+            border: 1px solid #202a3c;
+        }
+
+        .stat-card h3 {
+            font-size: 35px;
+            color: #00d9ff;
+        }
+
+        .stat-card p {
+            color: #aaa;
+        }
+
+        /* EDUCATION */
+        .education-card {
+            border-left: 3px solid #00d9ff;
+            padding-left: 20px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+        }
+
+        .education-card p {
+            color: #aaa;
+        }
+
+        /* CONTACT */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-text {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .socials a {
+            display: inline-block;
+            margin: 8px;
+            color: #00d9ff;
+            text-decoration: none;
+            border: 1px solid #00d9ff;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+        .socials a:hover {
+            background: #00d9ff;
+            color: #000;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #080b12;
+            color: #777;
+        }
+
+        /* MOBILE */
+        @media(max-width: 768px) {
+
+            nav ul {
+                display: none;
             }
 
-            header h1 {
-                font-size: 30px;
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 6%;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
 
-    <!-- HEADER -->
-    <header>
-        <h1>Shubham Yadav</h1>
+<nav>
 
-        <p>
-            2nd Year Information Technology Engineering Student
-        </p>
+    <div class="logo">
+        Shubham<span>.</span>
+    </div>
 
-        <div class="contact">
-            <a href="mailto:your-email@example.com">Email</a>
-            |
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            |
-            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-            |
-            <a href="https://leetcode.com/" target="_blank">LeetCode</a>
-        </div>
-    </header>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#dsa">DSA</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
 
 
-    <!-- ABOUT -->
-    <section>
-        <h2>Profile</h2>
+<!-- HERO -->
 
-        <p class="about">
-            Shubham Yadav is a 2nd year Information Technology Engineering
-            student with a strong interest in Data Structures and Algorithms,
-            problem solving, and Artificial Intelligence and Machine Learning.
-            He is currently strengthening his foundation in C++, Python,
-            DSA, and mathematical concepts relevant to AI and ML. He enjoys
-            solving programming problems and continuously improving his
-            problem-solving skills through competitive programming platforms.
-        </p>
-    </section>
+<section id="home">
 
+    <div class="container">
 
-    <!-- EDUCATION -->
-    <section>
-        <h2>Education</h2>
+        <div class="hero">
 
-        <div class="education-item">
-            <h3>B.Tech / B.E. in Information Technology</h3>
+            <small>HELLO, I'M</small>
+
+            <h1>Shubham Yadav</h1>
+
+            <h2>IT Engineering Student & Problem Solver</h2>
 
             <p>
-                Information Technology Engineering
+                2nd year Information Technology Engineering student focused
+                on Data Structures & Algorithms, C++, Python and exploring
+                Artificial Intelligence & Machine Learning.
             </p>
 
-            <p>
-                Expected Graduation: 2029
-            </p>
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- SKILLS -->
-    <section>
-        <h2>Technical Skills</h2>
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="about-text">
+
+            Shubham is a 2nd year Information Technology Engineering
+            student with a strong interest in problem solving and
+            algorithmic thinking. His current focus is building a strong
+            foundation in Data Structures and Algorithms using C++ while
+            developing Python skills for Artificial Intelligence and
+            Machine Learning.
+
+            <br><br>
+
+            He regularly practices programming problems and is interested
+            in competitive programming, open-source contribution and
+            building technically meaningful projects.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
 
         <div class="skills">
-            <span class="skill">C++</span>
-            <span class="skill">Data Structures & Algorithms</span>
-            <span class="skill">Python</span>
-            <span class="skill">Problem Solving</span>
-            <span class="skill">Git & GitHub</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Machine Learning</span>
-            <span class="skill">Artificial Intelligence</span>
+
+            <div class="skill">C++</div>
+            <div class="skill">Data Structures & Algorithms</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Python</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Artificial Intelligence</div>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- DSA -->
-    <section>
-        <h2>Problem Solving</h2>
+<!-- PROJECTS -->
 
-        <ul>
-            <li>Strong focus on Data Structures and Algorithms using C++.</li>
-            <li>Regularly solving problems on LeetCode.</li>
-            <li>Experience with arrays, strings, linked lists, stacks, queues, hashing, trees and graphs.</li>
-            <li>Practicing algorithmic problem solving and optimization.</li>
-        </ul>
-    </section>
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <h3>Campus Lost & Found System</h3>
+
+                <p>
+                    A campus-based system designed to help students
+                    report, search and manage lost and found items.
+                </p>
+
+                <div class="tech">
+                    Team Project • Web • Database
+                </div>
+
+            </div>
 
 
-    <!-- PROJECTS -->
-    <section>
-        <h2>Projects</h2>
+            <div class="project-card">
 
-        <div class="project">
-            <h3>Campus Lost & Found System</h3>
+                <h3>Adaptive Route Decision Engine</h3>
+
+                <p>
+                    A route decision system designed to consider road
+                    hazards, vehicle constraints, accident-prone areas,
+                    fuel requirements and route risk.
+                </p>
+
+                <div class="tech">
+                    SIH Project • AI • Route Intelligence
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>DSA Problem Solving</h3>
+
+                <p>
+                    Continuous implementation and practice of data
+                    structures and algorithms using C++ with a focus
+                    on efficient problem solving.
+                </p>
+
+                <div class="tech">
+                    C++ • DSA • LeetCode
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Coming Soon...</h3>
+
+                <p>
+                    More projects involving Artificial Intelligence,
+                    Machine Learning and advanced algorithmic problem
+                    solving will be added here.
+                </p>
+
+                <div class="tech">
+                    Currently Building
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DSA -->
+
+<section id="dsa">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Problem <span>Solving</span>
+        </h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <h3>300+</h3>
+
+                <p>
+                    LeetCode Problems
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>C++</h3>
+
+                <p>
+                    Primary DSA Language
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>DSA</h3>
+
+                <p>
+                    Current Core Focus
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                B.Tech / B.E. — Information Technology
+            </h3>
 
             <p>
-                A campus-based system designed to help students report,
-                search, and manage lost and found items within the campus.
-                Developed as a team project.
+                2nd Year • Expected Graduation: 2029
             </p>
-        </div>
-
-        <div class="project">
-            <h3>Adaptive Route Decision Engine</h3>
 
             <p>
-                A Smart India Hackathon project focused on selecting safer
-                and vehicle-suitable routes by considering road hazards,
-                incidents, accident-prone areas, fuel requirements, and
-                other route-risk factors.
+                Currently building strong foundations in programming,
+                algorithms, mathematics and emerging technologies.
             </p>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- CURRENT LEARNING -->
-    <section>
-        <h2>Currently Learning</h2>
+<!-- CONTACT -->
 
-        <ul>
-            <li>Advanced Data Structures and Algorithms</li>
-            <li>Competitive Programming</li>
-            <li>Python for Artificial Intelligence and Machine Learning</li>
-            <li>Engineering Mathematics for AI/ML</li>
-            <li>Machine Learning Fundamentals</li>
-            <li>Open Source Contribution and GSoC Preparation</li>
-        </ul>
-    </section>
+<section id="contact">
 
+    <div class="container">
 
-    <!-- GOALS -->
-    <section>
-        <h2>Career Interests</h2>
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
 
-        <p>
-            Data Structures & Algorithms, Artificial Intelligence,
-            Machine Learning, Competitive Programming, Open Source,
-            and problem-solving oriented engineering.
+        <p class="contact-text">
+            Interested in collaborating, discussing DSA, AI/ML,
+            open source or technology?
         </p>
-    </section>
+
+        <div class="socials">
+
+            <a href="mailto:your-email@example.com">
+                Email
+            </a>
+
+            <a href="https://github.com/" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://leetcode.com/" target="_blank">
+                LeetCode
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <footer>
-        © 2026 Shubham Yadav
-    </footer>
+<!-- FOOTER -->
 
-</div>
+<footer>
+
+    © 2026 Shubham Yadav • Built with HTML & CSS
+
+</footer>
+
 
 </body>
 </html>
